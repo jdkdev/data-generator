@@ -1,32 +1,32 @@
 {
   "scripts": {
-    "dev:vite": "vite --config config/vite.config.ts",
-    "build:vite": "vite build --config config/vite.config.ts",
-    "serve:vite": "vite preview --config config/vite.config.ts",
     "dev": "run-p dev:*",
-    "serve": "run-p serve:*",
-    "build": "NODE_ENV=production run-s build:*",
-    "test": "jest --passWithNoTests",
     "dev:routify": "routify",
+    "dev:vite": "vite --config config/vite.config.ts",
+    "serve": "run-p serve:*",
+    "serve:vite": "vite preview --config config/vite.config.ts",
+    "build": "NODE_ENV=production run-s build:*",
+    "build:routify": "routify -b",
+    "build:vite": "vite build --config config/vite.config.ts",
+    "test": "jest --passWithNoTests",
     "serve:spa": "spassr",
     "serve:ssr": "spassr --ssr --port 5005",
-    "build:routify": "routify -b",
     "docker:build": "run-s build:* && docker build -t frontier-app:latest .",
     "docker:run": "docker run --name frontier-app -d -p 8080:80 frontier-app:latest"
   },
   "devDependencies": {
     "@frontierjs/vite-plugin-frontier": "^0.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.10",
-    "html-minifier": "^4.0.0",
-    "vite": "^2.3.7",
-    "vite-main-js": "^0.0.1",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-svelte3": "^3.2.1",
-    "prettier-eslint": "^13.0.0"
+    "html-minifier": "^4.0.0",
+    "prettier-eslint": "^13.0.0",
+    "vite": "^2.3.7",
+    "vite-main-js": "^0.0.1"
   },
   "appConfig": {
     "script": "dist/main.js",
@@ -36,18 +36,19 @@
     "distDir": "dist"
   },
   "dependencies": {
+    "@frontierjs/vite-plugin-frontier": "^0.0.3",
+    "@frontierjs/web": "^0.0.6",
+    "@roxi/routify": "^2.14.0",
+    "mdsvex": "^0.10.6",
+    "npm-run-all": "^4.1.5",
+    "routify-plugin-frontmatter": "^1.0.1",
+    "sass": "^1.33.0",
+    "spassr": "^2.4.1-0",
     "svelte": "^3.46.0",
     "svelte-windicss-preprocess": "^4.0.11",
-    "vite-plugin-windicss": "^1.2.0",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.33.0",
-    "@roxi/routify": "^2.14.0",
-    "routify-plugin-frontmatter": "^1.0.1",
-    "spassr": "^2.4.1-0",
-    "@frontierjs/vite-plugin-frontier": "^0.0.3",
-    "@frontierjs/web": "^0.0.6"
+    "vite-plugin-windicss": "^1.2.0"
   },
-  "type": "xmodule",
+  "type": "module",
   "version": "0.0.1",
   "name": "frontier-app",
   "routify": {
