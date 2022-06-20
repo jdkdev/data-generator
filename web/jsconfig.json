@@ -1,0 +1,13 @@
+// For VSCODE auto file resolutions
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "@": ["./src"],
+      "@/*": ["./src/*"]
+    },
+    "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
+  }
+}
+
