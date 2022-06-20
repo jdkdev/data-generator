@@ -1,0 +1,9 @@
+.*
+!.gitignore
+*.log
+*-journal
+*.db
+tmp
+node_modules/
+dist
+api/config/local*
